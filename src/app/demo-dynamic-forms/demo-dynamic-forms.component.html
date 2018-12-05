@@ -1,0 +1,91 @@
+<form class="form-horizental" [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Create Account</h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="fullname" class="col-sm-2 control-label font-weight-bold">Fullname</label>
+        <div class="col-sm-8">
+          <input 
+            type="text" 
+            id="fullname" 
+            formControlName="fullname" 
+            class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email" class="col-sm-2 control-label font-weight-bold">Email</label>
+        <div class="col-sm-8">
+          <input 
+            type="text" 
+            id="email" 
+            formControlName="email" 
+            class="form-control">
+        </div>
+      </div>
+      <div formGroupName="skills">
+        <div class="form-group">
+          <label for="skillName" class="col-2 control-label font-weight-bold">Skill</label>
+          <div class="row px-3">
+            <div class="col-4">
+              <input 
+                type="text" 
+                id="skillName" 
+                formControlName="skillName" 
+                class="form-control" 
+                placeholder="Name">
+            </div>
+            <div class="col-4">
+              <input 
+                type="text" 
+                id="experience" 
+                formControlName="experientInYear" 
+                class="form-control" 
+                placeholder="Experience in Years">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="proficiency" class="col-2 control-label font-weight-bold">Proficiency</label>
+          <div class="row px-3">
+            <div class="col-3">
+              <label class="radio-inline">
+                <input 
+                  type="radio" 
+                  id="proficiency" 
+                  formControlName="proficiency" 
+                  class="form-control" 
+                  value="beginner">Beginner
+              </label>
+            </div>
+            <div class="col-3">
+              <label class="radio-inline">
+                <input 
+                  type="radio" 
+                  id="proficiency" 
+                  formControlName="proficiency" 
+                  class="form-control" 
+                  value="intermediate">Intermediate
+              </label>
+            </div>
+            <div class="col-3">
+              <label class="radio-inline">
+                <input 
+                  type="radio" 
+                  id="proficiency" 
+                  formControlName="proficiency" 
+                  class="form-control" 
+                  value="advanced">Advanced
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer px-3">
+      <button class="btn btn-primary mr-2" type="submit">Save</button>
+      <button class="btn btn-primary" type="button" (click)="loadData()">Load</button>
+    </div>
+  </div>
+</form>
